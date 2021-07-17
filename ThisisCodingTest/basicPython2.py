@@ -103,3 +103,125 @@ print(data)
 # remove() : 특정한 값을 갖는 원소 삭제
 data.remove(3)
 print(data)
+
+# 조건문
+# if 조건문 1 :
+#       조건문 1이 True일 때 실행되는 코드
+# elif 조건문 2 :
+#       조건문 1에 해당하지 않고 , 조건문 2가 True 일 때 실행되는 코드
+# else :
+#       위의 모든 조건문이 모두 True 값이 아닐 때 실행되는 코드
+grade = 90
+if grade >= 90 :
+    print("A")
+elif grade >= 80 :
+    print("B")
+elif grade >= 70 :
+    print("C")
+else :
+    print("F")
+
+# in , not in 연산자
+# X in 리스트 -> 리스트 안에 X가 들어 있을 때 True
+# X not in  문자열 -> 문자열 안에 X가 들어가 있지 않을 때 True
+
+# pass -> 조건문의 값이 True라고 해도 아무것도 처리하고 싶지 않을 때 사용
+score = 85
+if score >= 80 :
+    pass
+else :
+    print("성적이 80점 미만입니다")
+
+print("프로그램을 종료합니다")
+
+# 반복문 
+# while , for
+# while -> 조건이 참일 때에 한해서 반복적으로 코드 수행
+i = 1
+result = 0
+
+# i가 9보다 작거나 같을 때 아래 코드를 반복적으로 실행
+while i <= 9 :
+    result += i
+    i += 1
+
+print(result)
+
+# for 
+# for 변수 in 리스트 :
+#       실행할 소스코드
+
+result = 0
+# i는 1부터 9까지의 모든 값을 순회
+for i in range(1,10) : 
+    result += i
+
+print(result)
+
+# range() 의 값으로 하나의 값만 넣으면 자동으로 시작 값은 0이 된다
+scores = [90,85,77,65,97]
+
+for i in range(5) :
+    if scores[i] >= 80 :
+        print(i + 1, "번 학생은 합격입니다.")
+
+# 2중 for문 - 구구단
+for i in range(2,10) :
+    for j in range(1,10) :
+        print(i,"X",j,"=",i*j)
+    print()
+
+# 함수
+# def 함수명(매개변수) :
+#       실행할 소스코드
+#       return 변환 값
+
+# 더하기 기능 함수
+def add(a,b) :
+    return a + b
+
+print(add(3,7))
+
+# 함수의 배개변수의 변수를 직접 지정
+print(add(b = 3 , a = 7))
+
+# global 키워드 -> 해당 함수는 지역변수를 만들지 않고 함수 바깥에 선언된 변수를 바로 참조하게 된다
+a = 0
+
+def func() :
+    global a
+    a += 1
+
+for i in range(10) :
+    func()
+
+print(a)
+
+# 입 출력
+# 입력을 위한 코드
+
+# 데이터의 개수 입력
+n = int(input())
+
+# 각 데이터를 공백으로 구분하여 입력
+data = list(map(int,input().split()))
+
+data.sort(reverse=True)
+print(data)
+
+# n, m ,k를 공백으로 구분하여 입력
+n, m, k = map(int,input().split())
+
+print(n,m,k)
+
+# sys 라이브러리 사용 -> 빠른 입력을 위해 java 의 버퍼드리더 라고 생각
+import sys
+# readline() 함수 호출 후 꼭 rstrip() 함수 사용해야 한다 -> readline() 으로 입력하면 입력후 엔터가 줄바꿈 기호로 입력 => 이 공백 문자를 제거하기위해 rstrip() 함수 사용
+sys.stdin.readline().rstrip()
+
+# 변수를 문자열로 바꾸어 출력 -> str()
+answer = 7
+
+print("정답은" + str(answer) + "입니다")
+# 각 변수를 콤마로 구분해도 된다
+print("정답은", str(answer), "입니다")
