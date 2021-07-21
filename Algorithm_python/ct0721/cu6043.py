@@ -2,4 +2,4 @@ import sys
 
 a , b = map(float,sys.stdin.readline().split())
 
-print(format((a / b)))
+print(format((a / b),".3f"))
