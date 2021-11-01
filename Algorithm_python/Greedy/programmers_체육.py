@@ -1,6 +1,3 @@
-n = 5
-lost = [2, 4]
-reserve = [1, 3, 5]
 
 
 ##for i in range(lost) :
@@ -31,6 +28,10 @@ reserve = [1, 3, 5]
 #                         answer += 1
 #                         break
 #     return answer
+
+n = 5
+lost = [2, 4]
+reserve = [1, 3, 5]
 
 ## 90% 정답 -> java로 푼거 대입
 ## 도난당한 학생수 만큼 반복
@@ -75,4 +76,7 @@ def solution(n, lost, reserve):
         if yn == False :
            # 수업을 들을 수 잇는 학생 수에서 1씩 감소시킨다
            answer -= 1
+
+
     return answer
+
